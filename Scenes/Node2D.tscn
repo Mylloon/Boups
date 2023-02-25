@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Villain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Button_Node2D.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 719, 386 )
+script = null
+
+[node name="Button" type="Button" parent="."]
+margin_left = 654.0
+margin_top = 288.0
+margin_right = 784.0
+margin_bottom = 322.0
+theme = SubResource( 1 )
+text = "CLIQUE MOI"
+script = ExtResource( 3 )
+
+[node name="Villain" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276, 189 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
