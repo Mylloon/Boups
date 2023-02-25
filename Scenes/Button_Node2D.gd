@@ -12,7 +12,7 @@ const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 func _process(_delta):
 	if etat:
 		if villain.animation == villain_animations[-1]:
-			get_tree().change_scene("res://Scenes/gameover.tscn")
+			get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 
 func _on_Button_pressed():

@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_PlayButton_pressed():
-	get_tree().change_scene("res://Scenes/Node2D.tscn")
+	get_tree().change_scene("res://Scenes/DesktopScreen.tscn")
 
 
 func _on_Help_Button_pressed():
