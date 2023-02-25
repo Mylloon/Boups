@@ -29,13 +29,13 @@ func _process(delta):
 	var current_anim_idx = animations.find(me.animation)
 	if current_anim_idx >= animations.size() - 1:
 		# Last animation reached
-		check_next_animframe(me, max_frame, animations[0])
+		check_next_animframe(max_frame, animations[0])
 	else:
-		check_next_animframe(me, max_frame, animations[current_anim_idx + 1])
+		check_next_animframe(max_frame, animations[current_anim_idx + 1])
 
 
 # Jump to next animation at the end of the current one
-func check_next_animframe(me, max_frame, next_animation):
+func check_next_animframe(max_frame, next_animation):
 	if me.frame == 0 and next:
 		me.play(next_animation)
 		next = false
