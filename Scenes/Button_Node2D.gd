@@ -7,13 +7,7 @@ const texture_pressed = preload("res://Assets/skin_assets/button_normal.png")
 const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	etat = false
-	pass  # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if etat:
 		match villain.get_frame():
