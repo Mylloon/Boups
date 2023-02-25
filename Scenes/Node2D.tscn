@@ -31,7 +31,8 @@ text = "CLIQUE MOI"
 script = ExtResource( 3 )
 
 [node name="Villain" parent="." instance=ExtResource( 2 )]
-position = Vector2( 943, 639 )
+position = Vector2( 871, 589 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="Windows" type="Sprite" parent="."]
 visible = false
