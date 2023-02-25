@@ -2,8 +2,8 @@ extends Button
 
 onready var villain = $"../Villain/AnimatedSprite"
 var etat
-var _texture1 = load("res://Assets//skin_assets/button_normal.png")
-var _texture2 = load("res://Assets//skin_assets/button_pressed.png")
+var texture_pressed = preload("res://Assets/skin_assets/button_normal.png")
+var texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,9 +28,10 @@ func _process(_delta):
 
 
 func _on_Button_pressed():
-  etat = !etat
-
-  if(etat) :
-    self.StyleBoxTexture.set_texture(_texture1) # reste appuyé
-  else  :
-    self.StyleBoxTexture.set_texture(_texture2) # pas appuyé
+	etat = !etat
+	var new_stylebox_normal = self.get_stylebox("normal").duplicate()
+	if etat:
+		new_stylebox_normal.texture = texture_pressed
+	else:
+		new_stylebox_normal.texture = texture_released
+	self.add_stylebox_override("normal", new_stylebox_normal)
