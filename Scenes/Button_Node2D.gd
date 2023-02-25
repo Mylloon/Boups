@@ -17,15 +17,9 @@ func _ready():
 func _process(_delta):
 	match villain.get_frame():
 		2:
-			if etat:
-				print("non")
-			else:
-				print("caché")
+			print("non") if etat else print("caché")
 		_:
-			if etat:
-				print("oui")
-			else:
-				print("caché")
+			print("oui") if etat else print("caché")
 
 
 func _on_Button_pressed():
