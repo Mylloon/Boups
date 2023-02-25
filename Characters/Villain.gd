@@ -5,8 +5,8 @@ onready var me = $AnimatedSprite
 onready var timer
 var limit_random
 var rng = RandomNumberGenerator.new()
-onready var button = $"../Button/"
-export(Array, String) var animations = ["orange", "red"]
+onready var button = $"../Button"
+export(Array, String) var animations = ["green", "orange", "red"]
 
 # True if animation should change
 var next = false
@@ -14,10 +14,15 @@ var next = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer = 0
 	rng.randomize()
+
+	reset_timer()
+	me.play(animations[0])
+
+
+func reset_timer():
+	timer = 0
 	limit_random = rng.randi_range(2, 10)
-	me.play("orange")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,6 +43,15 @@ func check_next_animframe(max_frame, next_animation):
 	if me.frame == 0 and next:
 		me.play(next_animation)
 		next = false
+		if next_animation == animations[0]:
+			# Reset random for first animation
+			reset_timer()
+		return
 	if max_frame == me.frame:
 		# Last frame of animation reached
 		next = true
+		return
+	if max_frame == -1 and timer >= limit_random:
+		# No frame in animation, use time
+		next = true
+		return
