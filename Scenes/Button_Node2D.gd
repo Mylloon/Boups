@@ -11,12 +11,8 @@ const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 # Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if etat:
-		if villain.animation == villain_animations[1]:
-			print("non")
-		else:
-			print("oui")
-	else:
-		print("caché")
+		if villain.animation == villain_animations[-1]:
+			get_tree().change_scene("res://Scenes/gameover.tscn")
 
 
 func _on_Button_pressed():
