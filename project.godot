@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="Gja"
-run/main_scene="res://Scenes/Node2D.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
+window/size/height=720
 window/size/resizable=false
-window/size/fullscreen=true
 
 [gui]
 
