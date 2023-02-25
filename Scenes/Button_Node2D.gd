@@ -1,8 +1,9 @@
 extends Button
 
 onready var villain = $"../Villain/AnimatedSprite"
+onready var villain_animations = $"../Villain".animations
 
-var etat
+var etat = false
 const texture_pressed = preload("res://Assets/skin_assets/button_normal.png")
 const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 
@@ -10,11 +11,10 @@ const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 # Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if etat:
-		match villain.get_frame():
-			2:
-				print("non")
-			_:
-				print("oui")
+		if villain.animation == villain_animations[1]:
+			print("non")
+		else:
+			print("oui")
 	else:
 		print("caché")
 

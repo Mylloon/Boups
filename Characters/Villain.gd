@@ -6,6 +6,7 @@ onready var timer
 var limit_random
 var rng = RandomNumberGenerator.new()
 onready var button = $"../Button/"
+export(Array, String) var animations = ["orange", "red"]
 
 # True if animation should change
 var next = false
@@ -22,8 +23,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-
-	var animations = ["orange", "red"]
 
 	var max_frame = me.frames.get_frame_count(me.animation) - 1
 	var current_anim_idx = animations.find(me.animation)
