@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Characters/Villain.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Elements/Directory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Scripts/Button_Node2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/tres_button/normal.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=5]
@@ -39,23 +38,5 @@ position = Vector2( 871, 589 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="Directories" type="Node2D" parent="."]
-
-[node name="Directory1" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 130 )
-
-[node name="Directory2" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 180 )
-
-[node name="Directory3" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 230 )
-
-[node name="Directory4" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 280 )
-
-[node name="Directory5" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 330 )
-
-[node name="Directory6" parent="Directories" instance=ExtResource( 2 )]
-position = Vector2( 40, 380 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
