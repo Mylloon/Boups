@@ -9,13 +9,13 @@ const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
 
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta) -> void:
 	if etat:
 		if villain.animation == villain_animations[-1]:
-			get_tree().change_scene("res://Scenes/GameOver.tscn")
+			assert(get_tree().change_scene("res://Scenes/GameOver.tscn") == OK)
 
 
-func _on_Button_pressed():
+func _on_Button_pressed() -> void:
 	etat = !etat
 	var new_stylebox_normal = self.get_stylebox("normal").duplicate()
 	if etat:

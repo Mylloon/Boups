@@ -13,20 +13,20 @@ var next = false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	rng.randomize()
 
 	reset_timer()
 	me.play(animations[0])
 
 
-func reset_timer():
+func reset_timer() -> void:
 	timer = 0
 	limit_random = rng.randi_range(2, 10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta) -> void:
 	timer += delta
 
 	var max_frame = me.frames.get_frame_count(me.animation) - 1
@@ -39,7 +39,7 @@ func _process(delta):
 
 
 # Jump to next animation at the end of the current one
-func check_next_animframe(max_frame, next_animation):
+func check_next_animframe(max_frame, next_animation) -> void:
 	if me.frame == 0 and next:
 		me.play(next_animation)
 		next = false

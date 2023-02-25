@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Assets/skin_assets/menu_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/tres_button/normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=4]
