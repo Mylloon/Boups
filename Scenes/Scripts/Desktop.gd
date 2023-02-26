@@ -6,41 +6,67 @@ onready var mainMusic = $"MainMusic"
 onready var eyeMusic = $"EyeMusic"
 onready var alert = $"Alert"
 onready var directory = $"Directory"
+onready var terminal = $"Terminal"
 
 var rng = RandomNumberGenerator.new()
 
 const texture_file = preload("res://Assets/dossier/1.png")
+const texture_terminal = preload("res://Assets/dossier/2.png") #à modifier
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+			
+	var icon = terminal.get_node("Sprite")
+	var window = terminal.get_node("Screen")
+	var button_window = window.get_node("Button2")
+	var name_term = terminal.get_node("Label")
+	var scale_icon = 0.35
+			
 	rng.randomize()
-	var nbDossier = rng.randi_range(0, 3)
+	var nbDossier = rng.randi_range(4, 10)
 	for i in range(nbDossier):
 		var dossier = directory.duplicate()
-		var icon = dossier.get_node("Sprite")
-		var window = dossier.get_node("Screen")
-		var button_window = window.get_node("Button2")
 
 		# Une chance sur 2 d'avoir une icône
 		if rng.randi_range(0, 1) == 0:
 			# Text (icon)
-			var name_icon = dossier.get_node("Label")
+			icon = directory.get_node("Sprite")
+			window = directory.get_node("Screen")
+			button_window = window.get_node("Button2")
+			var name_icon = directory.get_node("Label")
 			name_icon.text = "Fichier"
 			# Texture (icon)
-			var scale_icon = 0.35
 			icon.scale = Vector2(scale_icon, scale_icon)
 			icon.texture = texture_file
 			# Background (window)
 			window.get_node("Window").visible = false
 			window.get_node("Window2").visible = true
+			window.get_node("Window3").visible = false
 			# Change button visibility
 			button_window.visible = false
 
+		var posY = i%4
+		var posX = i/4
+		if(posX == 0) : posY +=1
 		button_window.focus_mode = Button.FOCUS_NONE
-		dossier.position = Vector2(dossier.position.x, dossier.position.y + 150 * (i + 1))
+		dossier.position = Vector2(dossier.position.x + (150 * posX), dossier.position.y + 150 * (posY))
 		dossier.set_z_index(dossier.get_z_index() + 10 * (i + 1))
 		add_child(dossier)
+		
+		
+	icon = terminal.get_node("Sprite")
+	window = terminal.get_node("Screen")
+	name_term.text = "Terminal"
+	scale_icon = 0.05
+	icon.scale = Vector2(scale_icon, scale_icon)
+	icon.texture = texture_terminal
+	# Background (window)
+	window.get_node("Window").visible = false
+	window.get_node("Window2").visible = false
+	window.get_node("Window3").visible = true
+			# Change button visibility
+	button_window.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

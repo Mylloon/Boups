@@ -65,4 +65,27 @@ autoplay = true
 [node name="Alert" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 
+[node name="Terminal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 931, 120 )
+
+[node name="Screen" parent="Terminal" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( -304, 200 )
+
+[node name="Button2" type="Button" parent="Terminal/Screen"]
+margin_left = -90.0
+margin_top = -36.0
+margin_right = 187.0
+margin_bottom = 33.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+text = "./hack"
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="Directory/Screen/Button2" to="Directory/Screen/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Terminal/Screen/Button2" to="Terminal/Screen/Button2" method="_on_Button_pressed"]

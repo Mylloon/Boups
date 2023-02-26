@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/windows/folder_square.png" type="Texture" id=1]
 [ext_resource path="res://Elements/Scripts/WindowHeader.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/warning2/2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/warning2/3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/warning2/0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/windows/terminal.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 555, 60 )
@@ -18,7 +19,7 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "default",
-"speed": 1.0
+"speed": 0.6
 } ]
 
 [node name="Node2D" type="Node2D"]
@@ -67,7 +68,31 @@ script = ExtResource( 2 )
 position = Vector2( 488, -321 )
 shape = SubResource( 2 )
 
+[node name="Window3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 56.9999, -12 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Window3"]
+position = Vector2( 487.5, -490 )
+script = ExtResource( 2 )
+
+[node name="Header" type="CollisionShape2D" parent="Window3/Area2D"]
+position = Vector2( -489.5, 171 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="Window3"]
+script = ExtResource( 2 )
+
+[node name="CloseButton" type="CollisionShape2D" parent="Window3/Area2D2"]
+position = Vector2( 488, -321 )
+shape = SubResource( 2 )
+
 [connection signal="input_event" from="Window/Area2D" to="Window/Area2D" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="Window/Area2D2" to="Window/Area2D" method="_on_Area2D2_input_event"]
 [connection signal="input_event" from="Window2/Area2D" to="Window2/Area2D" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="Window2/Area2D2" to="Window/Area2D" method="_on_Area2D2_input_event"]
+[connection signal="input_event" from="Window3/Area2D" to="Window3/Area2D" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Window3/Area2D2" to="Window/Area2D" method="_on_Area2D2_input_event"]
