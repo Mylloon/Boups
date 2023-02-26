@@ -4,7 +4,7 @@ onready var help = $"../Help"
 
 
 func _on_PlayButton_pressed() -> void:
-	assert(get_tree().change_scene("res://Scenes/DesktopScreen.tscn") == OK)
+	get_tree().change_scene("res://Scenes/DesktopScreen.tscn")
 
 
 func _on_Help_Button_pressed() -> void:

@@ -21,7 +21,7 @@ margin_top = 8.0
 margin_right = 1025.0
 margin_bottom = 726.0
 custom_fonts/font = ExtResource( 2 )
-text = "[ Aim of the game ]
+text = "[Aim of the game]
 If you have made it this far, you've been selected
 for an important mission:
 	Get rid of our greatest enemy, Macreye.

@@ -94,4 +94,4 @@ func _process(_delta) -> void:
 	if end:
 		mainMusic.set_volume_db(-80)
 		eyeMusic.set_volume_db(-80)
-		assert(get_tree().change_scene("res://Scenes/victory.tscn") == OK)
+		get_tree().change_scene("res://Scenes/victory.tscn")

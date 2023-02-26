@@ -15,7 +15,7 @@ func _process(delta) -> void:
 	if etat:
 		timer += delta
 		if villain.animation == villain_animations.animations[-1]:
-			assert(get_tree().change_scene("res://Scenes/gameover.tscn") == OK)
+			get_tree().change_scene("res://Scenes/gameover.tscn")
 		if timer >= 7:  # fermer le dossier et enlever l'icone
 			etat = false
 			self.get_parent().get_parent().visible = false

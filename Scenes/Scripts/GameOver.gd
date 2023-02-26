@@ -3,7 +3,7 @@ onready var hover_sound = $"Hover"
 
 
 func _on_RestartButton_pressed() -> void:
-	assert(get_tree().change_scene("res://Scenes/menu.tscn") == OK)
+	get_tree().change_scene("res://Scenes/Menu.tscn")
 
 
 func _on_RestartButton_mouse_entered() -> void:
