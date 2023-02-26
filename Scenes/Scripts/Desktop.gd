@@ -15,6 +15,7 @@ func _ready() -> void:
 	var nbDossier = rng.randi_range(0, 3)
 	for i in range(nbDossier):
 		var dossier = get_child(2).duplicate()
+		dossier.get_child(0).get_child(3).get_child(1).focus_mode = Button.FOCUS_NONE
 		dossier.position = Vector2(dossier.position.x, dossier.position.y + 150 * (i + 1))
 		dossier.set_z_index(dossier.get_z_index() + 10 * (i + 1))
 		add_child(dossier)

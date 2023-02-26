@@ -43,6 +43,7 @@ margin_left = -128.0
 margin_top = -32.0
 margin_right = 149.0
 margin_bottom = 37.0
+focus_mode = 0
 theme = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )

@@ -33,6 +33,7 @@ margin_left = 312.0
 margin_top = 632.0
 margin_right = 724.0
 margin_bottom = 693.0
+focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 7 )
