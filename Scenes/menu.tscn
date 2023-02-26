@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Scripts/Screen_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/skin_assets/menu_font.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/tres_button/hover.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/windows/window.png" type="Texture" id=6]
+[ext_resource path="res://Musics/wav/menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://Musics/sound effect/hower.wav" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,16 +25,17 @@ margin_bottom = 392.0
 script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuButton"]
-margin_left = -24.0
+margin_left = -48.0
 margin_top = 40.0
-margin_right = 76.0
-margin_bottom = 203.0
+margin_right = 88.0
+margin_bottom = 272.0
 custom_constants/separation = 26
 alignment = 1
 
 [node name="PlayButton" type="Button" parent="MenuButton/VBoxContainer"]
-margin_right = 100.0
-margin_bottom = 37.0
+margin_top = 34.0
+margin_right = 136.0
+margin_bottom = 71.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -42,9 +45,9 @@ custom_styles/normal = ExtResource( 3 )
 text = "PLAY"
 
 [node name="Help_Button" type="Button" parent="MenuButton/VBoxContainer"]
-margin_top = 63.0
-margin_right = 100.0
-margin_bottom = 100.0
+margin_top = 97.0
+margin_right = 136.0
+margin_bottom = 134.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -54,9 +57,9 @@ custom_styles/normal = ExtResource( 3 )
 text = "HELP"
 
 [node name="Quit_Button" type="Button" parent="MenuButton/VBoxContainer"]
-margin_top = 126.0
-margin_right = 100.0
-margin_bottom = 163.0
+margin_top = 160.0
+margin_right = 136.0
+margin_bottom = 197.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -65,6 +68,16 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 3 )
 text = "QUIT"
 
+[node name="Hover" type="AudioStreamPlayer" parent="MenuButton"]
+stream = ExtResource( 8 )
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[connection signal="mouse_entered" from="MenuButton/VBoxContainer/PlayButton" to="MenuButton" method="_on_PlayButton_mouse_entered"]
 [connection signal="pressed" from="MenuButton/VBoxContainer/PlayButton" to="MenuButton" method="_on_PlayButton_pressed"]
+[connection signal="mouse_entered" from="MenuButton/VBoxContainer/Help_Button" to="MenuButton" method="_on_Help_Button_mouse_entered"]
 [connection signal="pressed" from="MenuButton/VBoxContainer/Help_Button" to="MenuButton" method="_on_Help_Button_pressed"]
+[connection signal="mouse_entered" from="MenuButton/VBoxContainer/Quit_Button" to="MenuButton" method="_on_Quit_Button_mouse_entered"]
 [connection signal="pressed" from="MenuButton/VBoxContainer/Quit_Button" to="MenuButton" method="_on_Quit_Button_pressed"]
