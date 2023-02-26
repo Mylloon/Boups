@@ -9,7 +9,6 @@ onready var directory = $"Directory"
 
 var rng = RandomNumberGenerator.new()
 
-
 const texture_file = preload("res://Assets/dossier/1.png")
 
 
