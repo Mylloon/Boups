@@ -10,3 +10,7 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			screen.visible = true
 			sprite.modulate = Color(0.66, 0.51, 0.85)  # shade
+			var progress_screen = screen.get_node("Window2")
+			if progress_screen.visible:
+				progress_screen.play()
+				screen.get_node("Button2").etat = true

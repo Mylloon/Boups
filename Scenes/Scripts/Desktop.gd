@@ -35,9 +35,8 @@ func _ready() -> void:
 			# Background (window)
 			window.get_node("Window").visible = false
 			window.get_node("Window2").visible = true
-			# Change button text
-			button_window.text = "."
-
+			# Change button visibility
+			button_window.visible = false
 
 		button_window.focus_mode = Button.FOCUS_NONE
 		dossier.position = Vector2(dossier.position.x, dossier.position.y + 150 * (i + 1))
@@ -58,3 +57,14 @@ func _process(_delta) -> void:
 	else:
 		mainMusic.set_volume_db(0)
 		eyeMusic.set_volume_db(-80)
+
+	var end = true
+	for i in self.get_children():
+		if "Directory" in i.name:
+			if i.visible:
+				end = false
+
+	if end:
+		mainMusic.set_volume_db(-80)
+		eyeMusic.set_volume_db(-80)
+		assert(get_tree().change_scene("res://Scenes/victory.tscn") == OK)

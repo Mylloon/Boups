@@ -16,9 +16,9 @@ extents = Vector2( 38.75, 38.75 )
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
-"speed": 5.0
+"speed": 1.0
 } ]
 
 [node name="Node2D" type="Node2D"]
@@ -50,8 +50,6 @@ visible = false
 position = Vector2( 56, -12 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 3 )
-frame = 2
-playing = true
 
 [node name="Area2D" type="Area2D" parent="Window2"]
 position = Vector2( 487.5, -490 )

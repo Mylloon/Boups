@@ -39,3 +39,7 @@ func _on_Area2D2_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			drag_change_state()
 			window.visible = false
 			folder_icon.modulate = Color(1, 1, 1)  # reset shade
+			var progress_screen = window.get_node("Window2")
+			if progress_screen.visible:
+				progress_screen.stop()
+				window.get_node("Button2").etat = false

@@ -3,7 +3,7 @@ extends Button
 onready var villain = $"../../../Villain/AnimatedSprite"
 onready var villain_animations = $"../../../Villain"
 
-var etat = false
+export(bool) var etat = false
 var remplissage = 0
 const texture_pressed = preload("res://Assets/tres_button/hover-pressed.png")
 const texture_released = preload("res://Assets/tres_button/normal.png")
