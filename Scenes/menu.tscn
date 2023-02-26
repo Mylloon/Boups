@@ -5,12 +5,13 @@
 [ext_resource path="res://Assets/tres_button/normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/tres_button/hover.tres" type="StyleBox" id=5]
-[ext_resource path="res://Assets/windows.png" type="Texture" id=6]
+[ext_resource path="res://Assets/windows/window.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Windows" type="Sprite" parent="."]
 position = Vector2( 512, 360 )
+scale = Vector2( 0.5, 0.5 )
 z_index = -2
 texture = ExtResource( 6 )
 
@@ -32,7 +33,8 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="MenuButton/VBoxContainer"]
 margin_right = 100.0
 margin_bottom = 37.0
-custom_colors/font_color = Color( 0.34902, 0.313726, 0.313726, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 4 )
@@ -43,7 +45,8 @@ text = "PLAY"
 margin_top = 63.0
 margin_right = 100.0
 margin_bottom = 100.0
-custom_colors/font_color = Color( 0.34902, 0.313726, 0.313726, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 4 )
@@ -54,7 +57,8 @@ text = "HELP"
 margin_top = 126.0
 margin_right = 100.0
 margin_bottom = 163.0
-custom_colors/font_color = Color( 0.34902, 0.313726, 0.313726, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 4 )

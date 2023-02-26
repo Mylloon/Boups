@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/tres_button/normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/tres_button/hover.tres" type="StyleBox" id=5]
-[ext_resource path="res://Assets/windows.png" type="Texture" id=6]
+[ext_resource path="res://Assets/windows/windows.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,11 +25,12 @@ custom_fonts/font = ExtResource( 2 )
 text = "GAME OVER"
 
 [node name="RestartButton" type="Button" parent="."]
-margin_left = 340.0
-margin_top = 378.0
-margin_right = 700.0
-margin_bottom = 415.0
-custom_colors/font_color = Color( 0.34902, 0.313726, 0.313726, 1 )
+margin_left = 312.0
+margin_top = 384.0
+margin_right = 724.0
+margin_bottom = 445.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 4 )

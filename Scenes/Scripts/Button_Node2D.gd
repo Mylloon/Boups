@@ -4,8 +4,8 @@ onready var villain = $"../Villain/AnimatedSprite"
 onready var villain_animations = $"../Villain".animations
 
 var etat = false
-const texture_pressed = preload("res://Assets/skin_assets/button_normal.png")
-const texture_released = preload("res://Assets/skin_assets/button_pressed.png")
+const texture_pressed = preload("res://Assets/tres_button/hover-pressed.png")
+const texture_released = preload("res://Assets/tres_button/normal.png")
 
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.

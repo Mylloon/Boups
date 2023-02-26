@@ -1,10 +1,10 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=2]
 
-[ext_resource path="res://Assets/skin_assets/button_focus.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tres_button/hover-pressed.png" type="Texture" id=1]
 
 [resource]
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 0, 0, 730, 204 )
 margin_left = 10.0
 margin_right = 10.0
 margin_top = 2.0

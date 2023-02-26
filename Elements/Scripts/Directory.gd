@@ -1,9 +1,10 @@
 extends Area2D
 
-
-func _on_Area2D_mouse_entered() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+onready var screen = $"../Screen"
 
 
-func _on_Area2D_mouse_exited() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		event = event as InputEventMouseButton
+		if event.pressed and event.button_index == BUTTON_LEFT:
+			screen.visible = true

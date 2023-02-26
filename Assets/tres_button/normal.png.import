@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/windows.png-57bc7ca67ed2fd90bf67137af0c36b14.stex"
+path="res://.import/normal.png-74e29cb12c30af4f08c2651cbb3e7413.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/windows.png"
-dest_files=[ "res://.import/windows.png-57bc7ca67ed2fd90bf67137af0c36b14.stex" ]
+source_file="res://Assets/tres_button/normal.png"
+dest_files=[ "res://.import/normal.png-74e29cb12c30af4f08c2651cbb3e7413.stex" ]
 
 [params]
 
