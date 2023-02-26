@@ -5,8 +5,12 @@ onready var villain_animations = $"Villain"
 onready var mainMusic = $"MainMusic"
 onready var eyeMusic = $"EyeMusic"
 onready var alert = $"Alert"
+onready var directory = $"Directory"
 
 var rng = RandomNumberGenerator.new()
+
+
+const texture_file = preload("res://Assets/dossier/1.png")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +18,28 @@ func _ready() -> void:
 	rng.randomize()
 	var nbDossier = rng.randi_range(0, 3)
 	for i in range(nbDossier):
-		var dossier = get_child(2).duplicate()
-		dossier.get_child(0).get_child(3).get_child(1).focus_mode = Button.FOCUS_NONE
+		var dossier = directory.duplicate()
+		var icon = dossier.get_node("Sprite")
+		var window = dossier.get_node("Screen")
+		var button_window = window.get_node("Button2")
+
+		# Une chance sur 2 d'avoir une icône
+		if rng.randi_range(0, 1) == 0:
+			# Text (icon)
+			var name_icon = dossier.get_node("Label")
+			name_icon.text = "Fichier"
+			# Texture (icon)
+			var scale_icon = 0.35
+			icon.scale = Vector2(scale_icon, scale_icon)
+			icon.texture = texture_file
+			# Background (window)
+			window.get_node("Window").visible = false
+			window.get_node("Window2").visible = true
+			# Change button text
+			button_window.text = "."
+
+
+		button_window.focus_mode = Button.FOCUS_NONE
 		dossier.position = Vector2(dossier.position.x, dossier.position.y + 150 * (i + 1))
 		dossier.set_z_index(dossier.get_z_index() + 10 * (i + 1))
 		add_child(dossier)

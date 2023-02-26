@@ -1,7 +1,7 @@
 extends Button
 
-onready var villain = $"../../../../Villain/AnimatedSprite"
-onready var villain_animations = $"../../../../Villain"
+onready var villain = $"../../../Villain/AnimatedSprite"
+onready var villain_animations = $"../../../Villain"
 
 var etat = false
 var remplissage = 0
