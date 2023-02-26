@@ -12,7 +12,8 @@ config_version=4
 
 config/name="Gja"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/icons/jaquette.png"
+config/windows_native_icon="res://Assets/icons/jaquette.ico"
 
 [display]
 

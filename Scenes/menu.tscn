@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Scripts/Screen_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/skin_assets/menu_font.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/windows/window.png" type="Texture" id=6]
 [ext_resource path="res://Musics/wav/menu.wav" type="AudioStream" id=7]
 [ext_resource path="res://Musics/sound effect/hower.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/help.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -73,6 +74,9 @@ text = "QUIT"
 stream = ExtResource( 7 )
 volume_db = 8.0
 autoplay = true
+
+[node name="Help" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [connection signal="mouse_entered" from="VBoxContainer/PlayButton" to="VBoxContainer" method="_on_PlayButton_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer" method="_on_PlayButton_pressed"]

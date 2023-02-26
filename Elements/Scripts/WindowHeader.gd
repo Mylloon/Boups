@@ -26,10 +26,8 @@ func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		event = event as InputEventMouseButton
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			drag_change_state()
-			#print("here haha")
 		elif event.button_index == BUTTON_LEFT and !event.pressed:
 			drag_change_state()
-			#print("here huhu")
 
 
 func _on_Area2D2_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

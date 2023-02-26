@@ -4,22 +4,21 @@ onready var villain = $"../../../Villain/AnimatedSprite"
 onready var villain_animations = $"../../../Villain"
 
 export(bool) var etat = false
-var remplissage = 0
 const texture_pressed = preload("res://Assets/tres_button/hover-pressed.png")
 const texture_released = preload("res://Assets/tres_button/normal.png")
 
+var timer = 0
+
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.
-func _process(_delta) -> void:
+func _process(delta) -> void:
 	if etat:
+		timer += delta
 		if villain.animation == villain_animations.animations[-1]:
 			assert(get_tree().change_scene("res://Scenes/gameover.tscn") == OK)
-		if remplissage == 60 * 10:  # fermer le dossier et enlever l'icone
+		if timer >= 7:  # fermer le dossier et enlever l'icone
 			etat = false
 			self.get_parent().get_parent().visible = false
-		else:
-			remplissage += 1
-			print(remplissage)
 
 
 func _on_Button_pressed() -> void:

@@ -1,5 +1,6 @@
 extends Control
 onready var hover_sound = $"Hover"
+onready var help = $"../Help"
 
 
 func _on_PlayButton_pressed() -> void:
@@ -7,7 +8,7 @@ func _on_PlayButton_pressed() -> void:
 
 
 func _on_Help_Button_pressed() -> void:
-	print("help me")
+	help.visible = true
 
 
 func _on_Quit_Button_pressed() -> void:
