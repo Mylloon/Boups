@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Scripts/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Assets/skin_assets/menu_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/tres_button/normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/tres_button/pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/tres_button/hover.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/windows/windows.png" type="Texture" id=6]
+[ext_resource path="res://Assets/skin_assets/menu_font.tres" type="DynamicFont" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,7 +21,7 @@ margin_top = 338.0
 margin_right = 609.0
 margin_bottom = 368.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 7 )
 text = "GAME OVER"
 
 [node name="RestartButton" type="Button" parent="."]
@@ -31,7 +31,7 @@ margin_right = 724.0
 margin_bottom = 445.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.690196, 0.403922, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 7 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 3 )

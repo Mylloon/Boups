@@ -48,4 +48,11 @@ position = Vector2( 73, 147 )
 visible = false
 position = Vector2( 396, 195 )
 
+[node name="Directory2" parent="Directories" instance=ExtResource( 2 )]
+position = Vector2( 73, 258 )
+
+[node name="Screen" parent="Directories/Directory2" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 396, 195 )
+
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
